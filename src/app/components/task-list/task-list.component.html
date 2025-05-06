@@ -1,0 +1,15 @@
+<div>
+    <h1>Tasks...</h1>
+     <div *ngFor="let tasks of tasks$ | async">
+        <p>title:{{tasks.Title}}</p>
+        <p>Due Date:{{tasks.Due_Date}}</p>
+        <p>Status:{{tasks.Status}}</p>
+        <Button (click)="DeleteTask(tasks.title)">Delete</Button>
+     </div>
+</div>
+
+<div >
+    <H1>The List is Empty</H1>
+</div>
+
+<button (click)="addNewTask()">Add new Task</button>

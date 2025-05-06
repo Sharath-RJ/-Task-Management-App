@@ -1,0 +1,18 @@
+<form [formGroup]="taskForm" (ngSubmit)="updateTask()">
+    <label for="title"> Title</label>
+    <input type="text" formControlName="Title" maxlength="50">
+    <div *ngIf="taskForm.get('Title')?.invalid && taskForm.get('Title')?.touched">Title is required</div>
+    <label for="Due_Date"> Due Date</label>
+    <input type="date" formControlName="Due_Date" maxlength="50">
+    <div *ngIf="taskForm.get('Due_Date')?.invalid && taskForm.get('Due_Date')?.touched">Date is required</div>
+    <label for="status">Choose a Status:</label>
+    
+    <select formControlName="Status" name="status" id="status">
+        <option value="To Do">To Do</option>
+        <option value="Completed">Completed</option>
+    </select>
+    <div *ngIf="taskForm.get('Status')?.invalid && taskForm.get('Status')?.touched">Status is required</div>
+    <button type="submit">Add</button>
+</form>
+
+<a routerLink="/">Show List</a>
